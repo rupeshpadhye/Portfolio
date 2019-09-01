@@ -1,0 +1,216 @@
+{
+  
+"info":  [
+  {
+    "companyName": "PeopleGrove",
+    "date": "Feb 2019 - Present",
+    "JobTitle": "Software Developer",
+    "shortDescription": "Building Mentorship platform for college alumni and students",
+    "icon": "work",
+    "iconStyle": {
+      "background": "rgb(33, 150, 243)",
+      "color": "#fff"
+    },
+    "moreInfo": {
+      "achievements": [
+        
+      ],
+      "roles": [
+        "Build Reusable React Components using Ant Design, Redux-Saga",
+        "Working with the product team to develop new features focused on improving the user experience ",
+        "Develope backend API using Node MVC Framework(Sails.js) ",
+        "Enhancement in existing features and improve current architecture ",
+        "Design and develope Real time features using Firebase"
+      ],
+      "technologies": [
+        "React",
+        "AngularJS",
+        "Sails.js",
+        "Postgresql",
+        "Redis",
+        "Google Cloud",
+        "Heroku",
+        "RabbitMQ",
+        "Firebase",
+        "Elastic Search"
+      ]
+    }
+  },
+  {
+    "companyName": "",
+    "date": "Apr 2018 - Present",
+    "JobTitle": "Mentor",
+    "shortDescription": "Code reviewer for Udacity Android native apps and Mentored students",
+    "icon": "people",
+    "iconStyle": {
+      "background": "rgb(33, 150, 243)",
+      "color": "#fff"
+    },
+    "moreInfo": {
+      "achievements": [
+        
+      ],
+      "roles": [
+        
+      ],
+      "technologies": [
+        
+      ]
+    }
+  },
+  {
+    "companyName": "Udacity",
+    "date": "Aug 2016",
+    "JobTitle": "Android Nano degree program",
+    "shortDescription": "Native android development sponsored by Google India",
+    "icon": "beenhere",
+    "iconStyle": {
+      "background": "rgb(255, 102, 204)",
+      "color": "#fff"
+    },
+    "moreInfo": {
+      "achievements": [
+        
+      ],
+      "roles": [
+        
+      ],
+      "technologies": [
+        
+      ]
+    }
+  },
+  {
+    "companyName": "CitiusTech",
+    "date": "Dec 2015",
+    "JobTitle": "Tech Lead",
+    "shortDescription": "Built UI dashboards for Healthcare and Oil and gas Verticals",
+    "icon": "beenhere",
+    "iconStyle": {
+      "background": "rgb(33, 150, 243)",
+      "color": "#fff"
+    },
+    "moreInfo": {
+      "achievements": [
+        
+      ],
+      "roles": [
+        
+      ],
+      "technologies": [
+        
+      ]
+    }
+  },
+  {
+    "companyName": "CRISIL Ltd(Standard and Poor's company)",
+    "date": "Mar 2015",
+    "JobTitle": "Technology Analyst",
+    "shortDescription": "",
+    "icon": "work",
+    "iconStyle": {
+      "background": "rgb(33, 150, 243)",
+      "color": "#fff"
+    },
+    "moreInfo": {
+      "achievements": [
+        
+      ],
+      "roles": [
+        
+      ],
+      "technologies": [
+        
+      ]
+    }
+  },
+  {
+    "companyName": "Affiliated to MongoDB",
+    "date": "Sep 2015",
+    "JobTitle": "M101J MongoDB for Java developer",
+    "shortDescription": "Completed Course on MongoDB",
+    "icon": "beenhere",
+    "iconStyle": {
+      "background": "rgb(255, 102, 204)",
+      "color": "#fff"
+    },
+    "moreInfo": {
+      "achievements": [
+        
+      ],
+      "roles": [
+        
+      ],
+      "technologies": [
+        
+      ]
+    }
+  },
+  {
+    "companyName": "Affiliated to Oracle",
+    "date": "Apr 2014",
+    "JobTitle": "OCA Java 7 Programmer Certificate",
+    "shortDescription": "Completed Course on MongoDB",
+    "icon": "beenhere",
+    "iconStyle": {
+      "background": "rgb(255, 102, 204)",
+      "color": "#fff"
+    },
+    "moreInfo": {
+      "achievements": [
+        
+      ],
+      "roles": [
+        
+      ],
+      "technologies": [
+        
+      ]
+    }
+  },
+  {
+    "companyName": "Logixal Solutions,Mumbai",
+    "date": "Nov 2012",
+    "JobTitle": "Software engineer",
+    "shortDescription": "Part of Internet Banking product team",
+    "icon": "work",
+    "iconStyle": {
+      "background": "rgb(33, 150, 243)",
+      "color": "#fff"
+    },
+    "moreInfo": {
+      "achievements": [
+        
+      ],
+      "roles": [
+        
+      ],
+      "technologies": [
+        
+      ]
+    }
+  },
+  {
+    "companyName": "Computer Science and Engineering",
+    "date": "2008-2012",
+    "JobTitle": " B.Tech.(Computer Science)",
+    "shortDescription": "Part of Internet Banking product team",
+    "icon": "schoolrounded",
+    "iconStyle": {
+      "background": "rgb(255,20,147)",
+      "color": "#fff"
+    },
+    "moreInfo": {
+      "achievements": [
+        
+      ],
+      "roles": [
+        
+      ],
+      "technologies": [
+        
+      ]
+    }
+  }
+]
+}
