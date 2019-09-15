@@ -17,11 +17,11 @@ const Landing = ({ title , subTitle}) => {
     >
        <Slide direction="right" in={true} mountOnEnter unmountOnExit>
         <Box position={{ xs: '', sm: '', md: 'absolute' }} my ={10} left={0}>
-        <Typography variant="h3" component="h1" gutterBottom>
+        <Typography variant="h3" component="h1" gutterBottom >
           {title}
         </Typography>
         <Fade in={true}>
-        <Typography variant="h5" component="h1" gutterBottom className="typewriter-sub-header">
+        <Typography variant="h6" gutterBottom className="typewriter-sub-header">
             {subTitle}
         </Typography>
         </Fade>
