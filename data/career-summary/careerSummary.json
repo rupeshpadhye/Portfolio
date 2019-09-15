@@ -45,17 +45,6 @@
     "iconStyle": {
       "background": "rgb(33, 150, 243)",
       "color": "#fff"
-    },
-    "moreInfo": {
-      "achievements": [
-        
-      ],
-      "roles": [
-        
-      ],
-      "technologies": [
-        
-      ]
     }
   },
   {
@@ -67,17 +56,7 @@
     "iconStyle": {
       "background": "rgb(255, 102, 204)",
       "color": "#fff"
-    },
-    "moreInfo": {
-      "achievements": [
-        
-      ],
-      "roles": [
-        
-      ],
-      "technologies": [
-        
-      ]
+      
     }
   },
   {
@@ -95,15 +74,20 @@
         
       ],
       "roles": [
-        
+        "Asset Monitoring dashboards with Polymer JS following micro frontends concepts",
+        "End to end testing with Mocha, Chai, Sinon, Selenium, Istanbul",
+        "BDD and TDD testing strategy used for testing web components",
+        "Designed and developed Spring boot based Micro services for widgets",
+        "Rigorously following scrum rituals",
+        "Mentored, paired and reviewed work across the frontend and design teams"
       ],
       "technologies": [
-        
+        "Polymer","Spring Boot","Spring","Spring Data","Mocha", "Chai", "Sinon", "Selenium", "Istanbul","Pivotal CF","Predix"
       ]
     }
   },
   {
-    "companyName": "CRISIL Ltd(Standard and Poor's company)",
+    "companyName": "CRISIL Ltd",
     "date": "Mar 2015",
     "JobTitle": "Technology Analyst",
     "shortDescription": "",
@@ -117,15 +101,16 @@
         
       ],
       "roles": [
-        
+        "Built modules using Angular 1.x and Spring based RESTful services for market analytical web portal",
+        "Developed complex queries against high volume of data set"
       ],
       "technologies": [
-        
+        "Spring MVC", "Oracle","AngularJS","HTML","CSS"
       ]
     }
   },
   {
-    "companyName": "Affiliated to MongoDB",
+    "companyName": "",
     "date": "Sep 2015",
     "JobTitle": "M101J MongoDB for Java developer",
     "shortDescription": "Completed Course on MongoDB",
@@ -133,39 +118,17 @@
     "iconStyle": {
       "background": "rgb(255, 102, 204)",
       "color": "#fff"
-    },
-    "moreInfo": {
-      "achievements": [
-        
-      ],
-      "roles": [
-        
-      ],
-      "technologies": [
-        
-      ]
     }
   },
   {
-    "companyName": "Affiliated to Oracle",
+    "companyName": "",
     "date": "Apr 2014",
     "JobTitle": "OCA Java 7 Programmer Certificate",
-    "shortDescription": "Completed Course on MongoDB",
+    "shortDescription": "Affiliated to Oracle",
     "icon": "beenhere",
     "iconStyle": {
       "background": "rgb(255, 102, 204)",
       "color": "#fff"
-    },
-    "moreInfo": {
-      "achievements": [
-        
-      ],
-      "roles": [
-        
-      ],
-      "technologies": [
-        
-      ]
     }
   },
   {
@@ -183,10 +146,12 @@
         
       ],
       "roles": [
-        
+        "Responsible for developing end-to-end feature development from designing, development to delivery",
+        "Built Standing instruction processing",
+        "Developed complete UI for spending analysis for business user"
       ],
       "technologies": [
-        
+        "Java","Spring MVC","XML","XSLT","Jquery","REST","Oracle","SOA","EJB","Weblogic","IBM MQ"
       ]
     }
   },
@@ -194,22 +159,11 @@
     "companyName": "Computer Science and Engineering",
     "date": "2008-2012",
     "JobTitle": " B.Tech.(Computer Science)",
-    "shortDescription": "Part of Internet Banking product team",
+    "shortDescription": "",
     "icon": "schoolrounded",
     "iconStyle": {
       "background": "rgb(255,20,147)",
       "color": "#fff"
-    },
-    "moreInfo": {
-      "achievements": [
-        
-      ],
-      "roles": [
-        
-      ],
-      "technologies": [
-        
-      ]
     }
   }
 ]

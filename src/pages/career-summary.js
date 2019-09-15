@@ -95,7 +95,6 @@ const CareerSummary = () => {
     }`);
   //console.log(graphqlResponse);
   const careerInfo = graphqlResponse.allCareerSummaryJson.edges[0].node.info;
-  console.log('careerInfo',careerInfo);  
   const [drawerInfo, setDrawerInfo] = 
         React.useState({ isOpen: false , careerStepData: undefined});
   function showDrawer(event, newValue) {

@@ -26,7 +26,7 @@ const Contact = () => {
         justifyContent="center"
         minHeight="60vh"
         >
-     <Box style={{opacity:0.2}} position="absolute">
+     <Box style={{opacity:0.2 , width:'100%'}} position="absolute">
         <ContactSVG/>
      </Box>
      <Box>

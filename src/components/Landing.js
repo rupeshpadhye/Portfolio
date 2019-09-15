@@ -20,13 +20,13 @@ const Landing = ({ title , subTitle}) => {
         <Typography variant="h3" component="h1" gutterBottom>
           {title}
         </Typography>
-        <Fade in={true} timeout={600}>
-        <Typography variant="h5" component="h1" gutterBottom>
+        <Fade in={true}>
+        <Typography variant="h5" component="h1" gutterBottom className="typewriter-sub-header">
             {subTitle}
         </Typography>
         </Fade>
         </Box>
-       </Slide>
+        </Slide>
        <Box width="100%">
             <CodingPerson/>
        </Box>
