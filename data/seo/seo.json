@@ -1,0 +1,31 @@
+{
+    "title": "Rupesh Padhye",
+    "logo": "",
+    "author": "Rupesh Padhye",
+    "url": "https://rupeshpadhye.netlify.com",
+    "legalName": "Rupesh Padhye",
+    "description": "Experienced Software Developer, - JavaScript,React,Node,Java,Android ",
+    "socialLinks": {
+        "twitter": "https://twitter.com/rupeshpadhye",
+        "github": "https://github.com/rupeshpadhye",
+        "linkedin": "https://www.linkedin.com/in/rupesh-padhye-16301417/"
+    },
+    "googleAnalyticsID": "",
+    "themeColor": "#6b63ff",
+    "backgroundColor": "#6b63ff",
+    "social": {
+        "facebook": "",
+        "twitter": "@rupeshpadhye"
+    },
+    "address": {
+        "city": "Mumbai",
+        "region": "Maharashtra",
+        "country": "India",
+        "zipCode": "421201"
+    },
+    "contact": {
+        "email": "rupeshpadhye@gmail.com"
+    },
+    "foundingDate": "",
+    "recaptcha_key": ""
+}

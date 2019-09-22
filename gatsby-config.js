@@ -61,7 +61,14 @@ module.exports = {
         name:`json_data`,
         path:`./data/menu`
     }
- },
+  },
+  {
+    resolve:`gatsby-source-filesystem`,
+    options:{
+        name:`json_data`,
+        path:`./data/seo`
+    }
+  },
  {
   resolve: 'gatsby-source-graphql',
   options: {
@@ -74,5 +81,22 @@ module.exports = {
     fetchOptions: {},
   },
 },
+{
+  resolve: `gatsby-plugin-manifest`,
+  options: {
+    name: `Portfolio`,
+    short_name: `Portfolio`,
+    start_url: `/`,
+    background_color: `#FFFFFF`,
+    theme_color: `#444053`,
+    display: `standalone`,
+    icon: `./static/icon.png`,
+    lang: `en`,
+    description: `This is portfolio site`,
+
+
+  },
+},
+`gatsby-plugin-offline`
 ],
 }

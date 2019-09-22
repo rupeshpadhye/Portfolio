@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Tabs, Tab,Container,List,ListItem,ListItemText,Typography } from '@material-ui/core';
 import { navigate } from '@reach/router';
-import { StaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import IconButton from '@material-ui/core/IconButton';
@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import { Location } from '@reach/router';
 import { Link } from 'gatsby';
+import SEO from './SEO';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -128,31 +129,26 @@ const NavBar = (props) => {
 export default ({children,tabPos}) => {
   
   const classes = useStyles(); 
-  return (
-        <StaticQuery
-      query={graphql`
-        query MenuItemQuery {
-          allMenuJson {
-            edges {
-              node {
-                menuLinks {
-                  title
-                  to
-               }
-              }
-            }
-          }     
+  const graphqlResponse = useStaticQuery(graphql`
+  query MenuItemQuery {
+    allMenuJson {
+      edges {
+        node {
+          menuLinks {
+            title
+            to
+         }
         }
-      `}
-      //data.site.siteMetadata.menuLinks
-      render={data => (
-        <React.Fragment>
-        <NavBar tabs ={data.allMenuJson.edges[0].node.menuLinks} tabPos = {tabPos}/>
-        <Container className={classes.containerPos}>
-          {children}
-        </Container>
-        </React.Fragment>
-      )}
-    />
+      }
+    }     
+  }`);
+  return (
+    <React.Fragment>
+    <SEO></SEO>
+    <NavBar tabs ={graphqlResponse.allMenuJson.edges[0].node.menuLinks} tabPos = {tabPos}/>
+    <Container className={classes.containerPos}>
+      {children}
+    </Container>
+    </React.Fragment>
   )
 };
