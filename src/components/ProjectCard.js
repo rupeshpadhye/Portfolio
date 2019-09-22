@@ -4,14 +4,9 @@ import {Card, CardHeader,IconButton,CardContent,Icon,Typography,CardMedia,Box }
 from '@material-ui/core';
 
 import ChipBox from './ChipBox';
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   card: {
-    // width: '45%',
-    margin: 6,
-    //height: 300,
-  },
-  pos: {
-    marginBottom: 6,
+    margin: theme.spacing(1),
   },
   right: {
     float: 'right',
@@ -26,13 +21,10 @@ const useStyles = makeStyles({
     flexDirection:'column',
     alignItems: 'center'
   },
-  preview: {
-    height: '300px',
-  },
   description: {
     height: '3em',
   }
-});
+}));
 
 export default function ProjectCard({project}) {
   const classes = useStyles();

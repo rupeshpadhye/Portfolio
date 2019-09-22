@@ -64,7 +64,7 @@ const InfoDrawer = (props) => {
   return ( 
     info ?  <Drawer anchor='right' open={open} onClose={hideDrawer} classes={{
       paper: classes.drawer,
-      }}>
+      }}>   
     <Box width={drawerWidth}>
       <Box display="flex" alignItems="center" flexDirection="column">
         <Typography variant="h4" gutterBottom>{info.JobTitle}</Typography>
@@ -77,9 +77,9 @@ const InfoDrawer = (props) => {
     
        { moreInfo.technologies && <ChipBox chips={moreInfo.technologies} title="Technologies" /> }
     </Box>
-    <Box component="div" width='100%' position='absolute' bottom={8} className={classes.goBackBtn} >
+    <Box component="div" width='100%' className={classes.goBackBtn} >
       <Button onClick={hideDrawer} fullWidth color="secondary" size="large" >Back</Button>
-    </Box>
+    </Box> 
   </Drawer> : null)
 }
 

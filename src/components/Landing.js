@@ -21,7 +21,7 @@ const Landing = ({ title , subTitle}) => {
           {title}
         </Typography>
         <Fade in={true}>
-        <Typography variant="h6" gutterBottom className="typewriter-sub-header">
+        <Typography variant="subtitle2" gutterBottom className="typewriter-sub-header">
             {subTitle}
         </Typography>
         </Fade>

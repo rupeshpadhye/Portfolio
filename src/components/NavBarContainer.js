@@ -22,12 +22,12 @@ const useStyles = makeStyles(theme => ({
     // bottom: 0,
     display: 'flex',
     flexDirection: 'row',
-    paddingLeft: '1em',
+    paddingLeft: theme.spacing(1),
     alignItems:'center',
   },
   containerPos: {
     position:'relative',
-    top: '3em',
+    top: theme.spacing(6),
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -148,11 +148,9 @@ export default ({children,tabPos}) => {
       render={data => (
         <React.Fragment>
         <NavBar tabs ={data.allMenuJson.edges[0].node.menuLinks} tabPos = {tabPos}/>
-        <main>
-          <Container className={classes.containerPos}>
+        <Container className={classes.containerPos}>
           {children}
-          </Container>
-        </main>
+        </Container>
         </React.Fragment>
       )}
     />
