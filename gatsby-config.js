@@ -12,6 +12,7 @@ module.exports = {
       landingPageSubTitle: "I'm Rupesh and I'm a Software developer!",
       contactEmail: "rupeshpadhye@gmai.com",
       contactEmailSubject: "Hello%20Rupesh",
+      siteUrl: 'https://rupeshpadhye.netlify.com'
     },
   plugins: [ 
   {
@@ -28,6 +29,7 @@ module.exports = {
   //     whitelist: ["GITHUB_TOKEN",]
   //   },
   // },
+  'gatsby-plugin-robots-txt',
   'gatsby-plugin-material-ui',
   {
     resolve: 'gatsby-plugin-google-fonts',

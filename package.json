@@ -21,6 +21,7 @@
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-material-ui": "^2.1.4",
     "gatsby-plugin-react-svg": "^2.1.1",
+    "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-source-filesystem": "^2.1.18",
     "gatsby-source-graphql": "^2.1.11",
     "gatsby-transformer-json": "^2.2.5",

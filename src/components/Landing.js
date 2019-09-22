@@ -4,9 +4,14 @@ import Box from '@material-ui/core/Box';
 import CodingPerson from '../assets/coding_person.svg';
 import Fade from '@material-ui/core/Fade';
 import Slide from '@material-ui/core/Slide';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 
 const Landing = ({ title , subTitle}) => {
+  const theme = useTheme();
+  const isBelowMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+
     return ( 
     <Box 
     id="landing"
@@ -21,7 +26,7 @@ const Landing = ({ title , subTitle}) => {
           {title}
         </Typography>
         <Fade in={true}>
-        <Typography variant="subtitle2" gutterBottom className="typewriter-sub-header">
+        <Typography variant={isBelowMediumScreen ? 'subtitle2': 'h6'} gutterBottom className="typewriter-sub-header">
             {subTitle}
         </Typography>
         </Fade>
