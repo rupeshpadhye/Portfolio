@@ -1,21 +1,52 @@
-import React, { Children } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Tabs, Tab,Container,Box } from '@material-ui/core';
+import { AppBar, Tabs, Tab,Container,List,ListItem,ListItemText,Typography } from '@material-ui/core';
 import { navigate } from '@reach/router';
 import { StaticQuery, graphql } from "gatsby";
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import { Location } from '@reach/router';
+import { Link } from 'gatsby';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
   toolBarColor:{
     backgroundColor: 'white',
   },
+  mobileAppBar: {
+    // bottom: 0,
+    display: 'flex',
+    flexDirection: 'row',
+    paddingLeft: '1em',
+    alignItems:'center',
+  },
   containerPos: {
     position:'relative',
     top: '3em',
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  drawerPaper: {
+    padding:theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+  link: {
+    textDecoration:'none',
+  },
+  //TODO use theme
+  activeLink: {
+    borderBottom: `2px solid #f50057`,
+    width: theme.spacing(16),
   }
-});
+}));
 
 const onTabChange = (e , tab) => {
   navigate(tab.to);
@@ -24,13 +55,61 @@ const onTabChange = (e , tab) => {
 const NavBar = (props) => {
   const classes = useStyles();
   const { tabs,tabPos } = props;
+  const theme = useTheme();
+  const isBelowMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const [drawerInfo, setDrawerInfo] = React.useState({ isOpen: false });
+  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+
   return (
     <AppBar 
       position="fixed" 
-      color='default' 
+      color={isBelowMediumScreen ? 'primary' :'default' }
       elevation={0} 
-      className={classes.toolBarColor}>
-    <Tabs 
+      className={isBelowMediumScreen ? classes.mobileAppBar: classes.toolBarColor}>
+    { isBelowMediumScreen ? ( 
+      <React.Fragment>
+      <SwipeableDrawer
+       classes={{
+        paper: classes.drawerPaper,
+        }}
+        disableBackdropTransition={!iOS} 
+        disableDiscovery={iOS} 
+        open={drawerInfo.isOpen} 
+        onOpen={()=>setDrawerInfo({ isOpen: true })}
+        onClose={()=>setDrawerInfo({ isOpen: false })}>
+        <List aria-label="menu">
+      {
+       tabs.map(tab => <ListItem key={`tab-${tab.to}`}>
+            <Link 
+              to={tab.to} 
+              className={classes.link}
+              activeClassName={classes.activeLink}
+              >  
+                <ListItemText primary={tab.title} />
+              </Link>
+       </ListItem>)
+       }
+       </List>
+      </SwipeableDrawer>   
+      <IconButton 
+          edge="start"
+          onClick={()=>setDrawerInfo({ isOpen: true })} 
+          className={classes.menuButton} 
+          color="inherit" 
+          aria-label="menu">
+            <MenuIcon />
+      </IconButton>
+      <Typography variant="h6" className={classes.title}>
+          <Location>
+          {({ location }) => {
+            const pageLocation  = tabs.find(tab => tab.to ===location.pathname);
+            return <span>{pageLocation ? pageLocation.title: ''}</span>
+          }}
+        </Location>
+      </Typography>
+      </React.Fragment>
+      ):
+      <Tabs 
      value={tabPos}
      aria-label="tabs"  
      variant='scrollable'
@@ -38,14 +117,16 @@ const NavBar = (props) => {
      scrollButtons='auto'
      >
      {
-       tabs.map(tab =>   <Tab label={tab.title} key={`tab-${tab.to}`} />)
+       tabs.map(tab =>   <Tab tabIndex= '0' label={tab.title} key={`tab-${tab.to}`} />)
      }
     </Tabs>
+    }
   </AppBar>
   );
 }
 
 export default ({children,tabPos}) => {
+  
   const classes = useStyles(); 
   return (
         <StaticQuery
@@ -65,14 +146,14 @@ export default ({children,tabPos}) => {
       `}
       //data.site.siteMetadata.menuLinks
       render={data => (
-        <Box display="flex" flexDirection="column">
+        <React.Fragment>
         <NavBar tabs ={data.allMenuJson.edges[0].node.menuLinks} tabPos = {tabPos}/>
         <main>
           <Container className={classes.containerPos}>
           {children}
           </Container>
         </main>
-        </Box>
+        </React.Fragment>
       )}
     />
   )

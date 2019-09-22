@@ -1,24 +1,24 @@
 {
     "menuLinks": [
         {
-            "title": "Hi There!",
+            "title": "Home",
             "to": "/"
         },
         {
             "title": "About",
-            "to": "about"
+            "to": "/about"
         },
         {
             "title": "Career Summary",
-            "to": "career-summary"
+            "to": "/career-summary"
         },
         {
             "title": "Projects",
-            "to": "projects"
+            "to": "/projects"
         },
         {
             "title": "Contact",
-            "to": "contact"
+            "to": "/contact"
         }
     ]
 }

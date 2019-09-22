@@ -12,21 +12,30 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 //const drawerWidth = 400;
 
 
-// const useStyles = makeStyles(theme => ({
-//   drawer: {
-//     [theme.breakpoints.up('sm')]: {
-//       width: drawerWidth,
-//       flexShrink: 0,
-//     },
-//     [theme.breakpoints.between('xs','sm')]: {
-//       width: drawerWidth,
-//       flexShrink: 0,
-//     },
-//   },
-//   drawerPaper: {
-//     width: drawerWidth,
-//   },
-// }));
+const useStyles = makeStyles(theme => ({
+  drawer: {
+    [theme.breakpoints.up('md')]: {
+      width: '25vw',
+      flexShrink: 0,
+      paddingTop: theme.spacing(1),
+
+    },
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+      flexShrink: 0,
+      paddingTop: theme.spacing(1),
+
+    },
+  },
+  goBackBtn: {
+    [theme.breakpoints.up('md')]: {
+      display:'none',
+    },
+    [theme.breakpoints.down('md')]: {
+      display: 'block',
+    },
+  }
+}));
 
 
 const RoleDescription = ({roles}) => {
@@ -48,11 +57,14 @@ const RoleDescription = ({roles}) => {
 const InfoDrawer = (props) => {
   const { hideDrawer,open, info, info :{ moreInfo} = { } } = props;
   const theme = useTheme();
+  const classes = useStyles();
   //TODO close button
   const drawerWidth = useMediaQuery(theme.breakpoints.up('md')) ? '25vw' : '95vw';
  
   return ( 
-    info ?  <Drawer anchor='right' open={open} onClose={hideDrawer}>
+    info ?  <Drawer anchor='right' open={open} onClose={hideDrawer} classes={{
+      paper: classes.drawer,
+      }}>
     <Box width={drawerWidth}>
       <Box display="flex" alignItems="center" flexDirection="column">
         <Typography variant="h4" gutterBottom>{info.JobTitle}</Typography>
@@ -64,6 +76,9 @@ const InfoDrawer = (props) => {
       </Box>
     
        { moreInfo.technologies && <ChipBox chips={moreInfo.technologies} title="Technologies" /> }
+    </Box>
+    <Box component="div" width='100%' position='absolute' bottom={8} className={classes.goBackBtn} >
+      <Button onClick={hideDrawer} fullWidth color="secondary" size="large" >Back</Button>
     </Box>
   </Drawer> : null)
 }
