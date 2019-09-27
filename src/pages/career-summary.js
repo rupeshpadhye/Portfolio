@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button, Drawer,Divider } from '@material-ui/core';
+import { Box, Typography, Button, Drawer,Divider, Toolbar, AppBar } from '@material-ui/core';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import Icon from '@material-ui/core/Icon';
 import ChipBox from '../components/ChipBox';
@@ -8,7 +8,8 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import 'react-vertical-timeline-component/style.min.css';
 import { useStaticQuery, graphql } from "gatsby";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-
+import IconButton from '@material-ui/core/IconButton';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 //const drawerWidth = 400;
 
 
@@ -58,14 +59,24 @@ const InfoDrawer = (props) => {
   const { hideDrawer,open, info, info :{ moreInfo} = { } } = props;
   const theme = useTheme();
   const classes = useStyles();
-  //TODO close button
   const drawerWidth = useMediaQuery(theme.breakpoints.up('md')) ? '25vw' : '95vw';
  
   return ( 
     info ?  <Drawer anchor='right' open={open} onClose={hideDrawer} classes={{
       paper: classes.drawer,
-      }}>   
-    <Box width={drawerWidth}>
+      }}>        
+    <AppBar>
+        <Toolbar>
+          <IconButton 
+            edge="start"
+            onClick={()=> hideDrawer()} 
+            color="inherit" 
+            aria-label="back">
+              <ArrowBackIcon />
+        </IconButton>
+        </Toolbar>  
+    </AppBar>    
+    <Box width={drawerWidth} mt={8}>
       <Box display="flex" alignItems="center" flexDirection="column">
         <Typography variant="h4" gutterBottom>{info.JobTitle}</Typography>
         <Typography variant="h5" gutterBottom>{info.companyName}</Typography>
@@ -77,9 +88,9 @@ const InfoDrawer = (props) => {
     
        { moreInfo.technologies && <ChipBox chips={moreInfo.technologies} title="Technologies" /> }
     </Box>
-    <Box component="div" width='100%' className={classes.goBackBtn} >
+    {/* <Box component="div" width='100%' className={classes.goBackBtn} >
       <Button onClick={hideDrawer} fullWidth color="secondary" size="large" >Back</Button>
-    </Box> 
+    </Box>  */}
   </Drawer> : null)
 }
 

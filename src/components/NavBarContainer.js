@@ -1,13 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Tabs, Tab,Container,List,ListItem,ListItemText,Typography } from '@material-ui/core';
+import { AppBar, Tabs, Tab,Container,List,ListItem,ListItemText,Typography,Button,Box } from '@material-ui/core';
 import { navigate } from '@reach/router';
 import { useStaticQuery, graphql } from "gatsby";
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import Drawer from '@material-ui/core/Drawer';
+import CloseIcon from '@material-ui/icons/Close';
 import { Location } from '@reach/router';
 import { Link } from 'gatsby';
 import SEO from './SEO';
@@ -33,6 +34,13 @@ const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
+  mobileFullDrawer:{
+    width:'100%',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+  }
+  ,
   drawerPaper: {
     padding:theme.spacing(2),
   },
@@ -46,6 +54,11 @@ const useStyles = makeStyles(theme => ({
   activeLink: {
     borderBottom: `2px solid #f50057`,
     width: theme.spacing(16),
+  },
+  topLeftButton: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
   }
 }));
 
@@ -57,9 +70,9 @@ const NavBar = (props) => {
   const classes = useStyles();
   const { tabs,tabPos } = props;
   const theme = useTheme();
-  const isBelowMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isBelowMediumScreen = useMediaQuery(theme.breakpoints.between('xs','md'));
+  const isMobile = useMediaQuery(theme.breakpoints.only('xs'));
   const [drawerInfo, setDrawerInfo] = React.useState({ isOpen: false });
-  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
   return (
     <AppBar 
@@ -69,15 +82,20 @@ const NavBar = (props) => {
       className={isBelowMediumScreen ? classes.mobileAppBar: classes.toolBarColor}>
     { isBelowMediumScreen ? ( 
       <React.Fragment>
-      <SwipeableDrawer
+      <Drawer
        classes={{
-        paper: classes.drawerPaper,
+        paper: isMobile ? classes.mobileFullDrawer : classes.drawerPaper ,
         }}
-        disableBackdropTransition={!iOS} 
-        disableDiscovery={iOS} 
         open={drawerInfo.isOpen} 
-        onOpen={()=>setDrawerInfo({ isOpen: true })}
         onClose={()=>setDrawerInfo({ isOpen: false })}>
+        {isMobile ?  <IconButton 
+          edge="end"
+          color= "primary"
+          onClick={()=>setDrawerInfo({ isOpen: false })} 
+          className={classes.topLeftButton} 
+          aria-label="close">
+            <CloseIcon />
+      </IconButton> : null}  
         <List aria-label="menu">
       {
        tabs.map(tab => <ListItem key={`tab-${tab.to}`}>
@@ -91,11 +109,12 @@ const NavBar = (props) => {
        </ListItem>)
        }
        </List>
-      </SwipeableDrawer>   
+      </Drawer>   
       <IconButton 
           edge="start"
           onClick={()=>setDrawerInfo({ isOpen: true })} 
           className={classes.menuButton} 
+
           color="inherit" 
           aria-label="menu">
             <MenuIcon />
@@ -122,6 +141,9 @@ const NavBar = (props) => {
      }
     </Tabs>
     }
+    <Box display='flex' alignItems='center' position="absolute" right={4} mr={2} >
+    <Button color="primary">Download Resume</Button>
+    </Box>
   </AppBar>
   );
 }
