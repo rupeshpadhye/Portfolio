@@ -9,16 +9,12 @@
             "to": "/about"
         },
         {
-            "title": "Career Summary",
-            "to": "/career-summary"
+            "title": "Career Path",
+            "to": "/career-path"
         },
         {
-            "title": "Projects",
+            "title": "Side Projects",
             "to": "/projects"
-        },
-        {
-            "title": "Contact",
-            "to": "/contact"
         }
     ]
 }

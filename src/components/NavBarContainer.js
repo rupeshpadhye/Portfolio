@@ -12,6 +12,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { Location } from '@reach/router';
 import { Link } from 'gatsby';
 import SEO from './SEO';
+import ContactInfo from './ContactInfo';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,6 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolBarColor:{
     backgroundColor: 'white',
+    justifyContent: 'center',
   },
   mobileAppBar: {
     // bottom: 0,
@@ -66,14 +68,18 @@ const onTabChange = (e , tab) => {
   navigate(tab.to);
 }
 
+const ResumeDownloadButton = ({resumeUrl,color='primary'}) => (
+<Box display='flex' alignItems='center' position="absolute" right={4} mr={2} >
+  <Button color={color} target="_blank" href={resumeUrl}>Download Resume</Button>
+</Box>);
+
 const NavBar = (props) => {
   const classes = useStyles();
-  const { tabs,tabPos } = props;
+  const { tabs,tabPos,resumeUrl } = props;
   const theme = useTheme();
   const isBelowMediumScreen = useMediaQuery(theme.breakpoints.between('xs','md'));
   const isMobile = useMediaQuery(theme.breakpoints.only('xs'));
   const [drawerInfo, setDrawerInfo] = React.useState({ isOpen: false });
-
   return (
     <AppBar 
       position="fixed" 
@@ -141,14 +147,12 @@ const NavBar = (props) => {
      }
     </Tabs>
     }
-    <Box display='flex' alignItems='center' position="absolute" right={4} mr={2} >
-    <Button color="primary">Download Resume</Button>
-    </Box>
+    { isMobile ? null :<ResumeDownloadButton resumeUrl={resumeUrl} color= {isBelowMediumScreen ? 'inherit': 'primary' }/> } 
   </AppBar>
   );
 }
 
-export default ({children,tabPos}) => {
+export default ({children,tabPos,resumeUrl}) => {
   
   const classes = useStyles(); 
   const graphqlResponse = useStaticQuery(graphql`
@@ -167,10 +171,11 @@ export default ({children,tabPos}) => {
   return (
     <React.Fragment>
     <SEO></SEO>
-    <NavBar tabs ={graphqlResponse.allMenuJson.edges[0].node.menuLinks} tabPos = {tabPos}/>
+    <NavBar tabs ={graphqlResponse.allMenuJson.edges[0].node.menuLinks} tabPos = {tabPos} resumeUrl ={resumeUrl}/>
     <Container className={classes.containerPos}>
       {children}
     </Container>
+    <ContactInfo></ContactInfo>
     </React.Fragment>
   )
 };

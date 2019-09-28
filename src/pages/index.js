@@ -5,22 +5,28 @@ import { useStaticQuery, graphql } from "gatsby";
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 const Index = () => {
-  const data = useStaticQuery(graphql`
-  query HeadingQuery {
-          site {
-            siteMetadata {
-              landingPageTitle
-              landingPageSubTitle
-            }
+
+  const graphqlResponse = useStaticQuery(graphql`
+    query AboutIndexQuery {
+      allAboutJson {
+        edges {
+          node {
+            resumeUrl
+            landingPageTitle
+            landingPageSubTitle
           }
-        }`);
+        }
+      }
+  }`);      
+     
+  const { resumeUrl,landingPageTitle,landingPageSubTitle } = graphqlResponse.allAboutJson.edges[0].node;
   return (
     <React.Fragment>
     <CssBaseline />
-      <NavBarContainer tabPos={0}>
+      <NavBarContainer tabPos={0} resumeUrl={resumeUrl}>
       <Landing 
-        title={data.site.siteMetadata.landingPageTitle} 
-        subTitle={data.site.siteMetadata.landingPageSubTitle} />
+        title={landingPageTitle} 
+        subTitle={landingPageSubTitle} />
     </NavBarContainer>
     </React.Fragment> 
     ) 

@@ -1,11 +1,17 @@
 {
+    "title":"Portfolio site",
+    "landingPageTitle": "Hi there!",
+    "landingPageSubTitle": "I'm Rupesh and I'm a Software developer!",
+    "contactEmail": "rupeshpadhye@gmai.com",
+    "contactEmailSubject": "Hello%20Rupesh",
     "summary": [
-     "6+ years of experience in development of multi-channel (Web, Mobile)",
-     "Hands on experience of Trending JavaScript technologies such as React, Polymer, PWA, SPA",
-     "Well versed with UI testing methodologies and tools", 
-     "Abilities to work across the technology stack such Spring, Android SDK",
-     "Experience of developing RESTful micro services",
-     "Seasoned agile practitioner"
-     
-    ]
+        "6+ years of experience in development of multi-channel (Web, Mobile)",
+        "Hands on experience of Trending JavaScript technologies such as React, Polymer, PWA, SPA",
+        "Well versed with UI testing methodologies and tools", 
+        "Abilities to work across the technology stack such Spring, Android SDK",
+        "Experience of developing RESTful micro services",
+        "Seasoned agile practitioner"
+        
+       ],
+    "resumeUrl": "https://drive.google.com/open?id=0B8HlQcU3T47ieDItNG0zb1BBb3RWUFlKYTFNbkJveTdtY1Mw"
 }
