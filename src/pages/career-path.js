@@ -88,9 +88,6 @@ const InfoDrawer = (props) => {
     
        { moreInfo.technologies && <ChipBox chips={moreInfo.technologies} title="Technologies" /> }
     </Box>
-    {/* <Box component="div" width='100%' className={classes.goBackBtn} >
-      <Button onClick={hideDrawer} fullWidth color="secondary" size="large" >Back</Button>
-    </Box>  */}
   </Drawer> : null)
 }
 

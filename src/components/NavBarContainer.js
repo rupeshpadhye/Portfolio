@@ -115,6 +115,8 @@ const NavBar = (props) => {
        </ListItem>)
        }
        </List>
+       {/* { isMobile ? <ResumeDownloadButton resumeUrl={resumeUrl} color= {'primary' }/> : null }  */}
+
       </Drawer>   
       <IconButton 
           edge="start"
