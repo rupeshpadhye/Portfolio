@@ -1,0 +1,73 @@
+{
+    "projects": [
+        {
+            "id":"private-1",
+            "name":"Staptalk",
+            "isArchived":false,
+            "description":"Digital Assistance for Schools",
+            "usesCustomOpenGraphImage":true,
+            "openGraphImageUrl":"https://lh3.googleusercontent.com/pESlocQFKz7UJ-zaNfNbtxdT1DS7ueiIx2j8sVbjbDXirkRdBleqMYBscG0N6O9ZeuBX=s360-rw",
+            "homepageUrl":"https://play.google.com/store/apps/details?id=com.staptalk.apps.staptalk&hl=en_IN",
+            "repositoryTopics": {
+                "edges": [
+                    {
+                        "node": {
+                            "topic": {
+                                "name": "5000+ downlaods"
+                            }
+                        }
+                    },
+                    {
+                        "node": {
+                            "topic": {
+                                "name": "4+ rating"
+                            }
+                        }
+                    },
+                    {
+                        "node": {
+                            "topic": {
+                                "name": "anroid"
+                            }
+                        }
+                    },
+                    {
+                        "node": {
+                            "topic": {
+                                "name": "sqllite"
+                            }
+                        }
+                    },
+                    {
+                        "node": {
+                            "topic": {
+                                "name": "firebase"
+                            }
+                        }
+                    },
+                    {
+                        "node": {
+                            "topic": {
+                                "name": "picasso"
+                            }
+                        }
+                    },
+                    {
+                        "node": {
+                            "topic": {
+                                "name": "okhttp"
+                            }
+                        }
+                    },
+                    {
+                        "node": {
+                            "topic": {
+                                "name": "startup"
+                            }
+                        }
+                    }
+                ]
+            }
+       }
+    ]
+}

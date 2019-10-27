@@ -69,6 +69,13 @@ module.exports = {
         path:`./data/seo`
     }
   },
+  {
+    resolve:`gatsby-source-filesystem`,
+    options:{
+        name:`json_data`,
+        path:`./data/projects`
+    }
+  },
  {
   resolve: 'gatsby-source-graphql',
   options: {

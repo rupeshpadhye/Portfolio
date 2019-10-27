@@ -1,5 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Github from '../assets/github.svg';
+
 import {Card, CardHeader,IconButton,CardContent,Icon,Typography,CardMedia,Box } 
 from '@material-ui/core';
 
@@ -28,9 +30,8 @@ const useStyles = makeStyles(theme => ({
 
 export default function ProjectCard({project}) {
   const classes = useStyles();
- // console.log('project',project);
-  const topics = (project.repositoryTopics.edges || [])
-                    .map(edge => edge.node.topic.name);
+  const topics = project.repositoryTopics ? (project.repositoryTopics.edges || [])
+                    .map(edge => edge.node.topic.name) : [];           
   return (
     <Box 
      width={{ xs: '100%', sm: '100%', md: '45%' }}>
@@ -39,7 +40,7 @@ export default function ProjectCard({project}) {
         action={
           <React.Fragment>
            { project.url ? (<IconButton href={project.url} target="_blank" className={classes.button} aria-label="code">
-              <Icon>code</Icon></IconButton>) : null}
+             <Github/></IconButton>) : null}
            { project.homepageUrl ? <IconButton href={project.homepageUrl} target="_blank" className={classes.button} aria-label="visit site">
               <Icon>launch</Icon>
             </IconButton> : null }

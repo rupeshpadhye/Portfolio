@@ -68,10 +68,11 @@ const onTabChange = (e , tab) => {
   navigate(tab.to);
 }
 
-const ResumeDownloadButton = ({resumeUrl,color='primary'}) => (
-<Box display='flex' alignItems='center' position="absolute" right={4} mr={2} >
+const ResumeDownloadButton = ({resumeUrl,color='primary',...other}) => {
+  return (
+<Box display='flex' alignItems='center' position="absolute" {...other}>
   <Button color={color} target="_blank" href={resumeUrl}>Download Resume</Button>
-</Box>);
+</Box>)};
 
 const NavBar = (props) => {
   const classes = useStyles();
@@ -115,7 +116,7 @@ const NavBar = (props) => {
        </ListItem>)
        }
        </List>
-       {/* { isMobile ? <ResumeDownloadButton resumeUrl={resumeUrl} color= {'primary' }/> : null }  */}
+       { isMobile ? <ResumeDownloadButton resumeUrl={resumeUrl} color= {'primary'} bottom={8}  /> : null } 
 
       </Drawer>   
       <IconButton 
@@ -149,7 +150,9 @@ const NavBar = (props) => {
      }
     </Tabs>
     }
-    { isMobile ? null :<ResumeDownloadButton resumeUrl={resumeUrl} color= {isBelowMediumScreen ? 'inherit': 'primary' }/> } 
+    { isMobile ? null :<ResumeDownloadButton 
+    right={4} mr={2}
+    resumeUrl={resumeUrl} color= {isBelowMediumScreen ? 'inherit': 'primary' }/> } 
   </AppBar>
   );
 }

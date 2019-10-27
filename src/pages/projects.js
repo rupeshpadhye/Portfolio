@@ -5,13 +5,36 @@ import NavBarContainer from '../components/NavBarContainer';
 import { useStaticQuery, graphql } from 'gatsby';
 const Projects = () => {
     const {
+		projectsJson: {
+			projects
+		},
 		github: {
 			repositoryOwner: {
 				repositories: { edges },
 			},
 		},
 	} = useStaticQuery(graphql`
-		{
+	query ProjectsQuery {
+			projectsJson {
+				projects {
+				id
+				name
+				isArchived
+				description
+				usesCustomOpenGraphImage
+				openGraphImageUrl
+				homepageUrl
+				repositoryTopics {
+					edges {
+					  node {
+						topic {
+						  name
+						}
+					  }
+					}
+				  }
+				}
+			}
 			github {
 				repositoryOwner(login: "rupeshpadhye") {
 					repositories(
@@ -48,7 +71,12 @@ const Projects = () => {
 				}
 			}
 		}
-    `)    
+	`)
+
+	
+
+ const allProjects = [...(edges|| []).filter(edge => !edge.node.isArchived).map((edge)=> edge.node),...projects];	
+ console.log(allProjects);    
  return (
   <NavBarContainer  tabPos={3}>   
   <Zoom in={true}>
@@ -58,9 +86,9 @@ const Projects = () => {
 	flexDirection={{ xs: 'column', sm: 'column', md: 'row' }}
     flexWrap="wrap">
      {
-         (edges || []).filter(edge => !edge.node.isArchived).map(
-			 (edge ,index)=>
-			  <ProjectCard key={`project-box-${index}`} project={edge.node}/> 
+         allProjects.map(
+			 (project ,index)=>
+			  <ProjectCard key={`project-box-${index}`} project={project}/> 
 			)
 
      }
