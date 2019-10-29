@@ -122,19 +122,19 @@ const About = ({summary}) => {
         visualBox ={
           <React.Fragment>
              <Box  display="flex" justifyContent="space-evenly">
-                  <img src='./logos/js.png' width="64" height="64"/>
-                  <img src='./logos/html5.png' width="64" height="64"/>
-                  <img src='./logos/css3.png' width="64" height="64"/> 
+                  <img src='/logos/js.png' width="64" height="64"/>
+                  <img src='/logos/html5.png' width="64" height="64"/>
+                  <img src='/logos/css3.png' width="64" height="64"/> 
             </Box>
             <Box  display="flex" justifyContent="space-evenly">
-                 <img src='./logos/react.png' width="64" height="64"/> 
-                 <img src='./logos/polymer.png' width="64" height="64"/>
-                  <img src='./logos/vue.png' width="64" height="64"/>
+                 <img src='/logos/react.png' width="64" height="64"/> 
+                 <img src='/logos/polymer.png' width="64" height="64"/>
+                  <img src='/logos/vue.png' width="64" height="64"/>
             </Box> 
             <Box  display="flex" justifyContent="space-evenly">
-                  <img src='./logos/redux.png' width="64" height="64"/>
-                  <img src='./logos/graphql.png' width="64" height="64"/>
-                  <img src='./logos/sass.png' width="64" height="64"/>
+                  <img src='/logos/redux.png' width="64" height="64"/>
+                  <img src='/logos/graphql.png' width="64" height="64"/>
+                  <img src='/logos/sass.png' width="64" height="64"/>
             </Box>
           </React.Fragment> 
         }
@@ -156,21 +156,21 @@ const About = ({summary}) => {
         visualBox ={
           <React.Fragment>
              <Box  display="flex" justifyContent="space-evenly">
-                  <img src='./logos/java.png' width="64" height="64"/>
-                  <img src='./logos/node.png' width="64" height="64"/>
+                  <img src='/logos/java.png' width="64" height="64"/>
+                  <img src='/logos/node.png' width="64" height="64"/>
                 </Box>
                 <Box  display="flex" justifyContent="space-evenly">
-                  <img src='./logos/spring.png' width="64" height="64"/>
-                  <img src='./logos/sailjs.png' width="64" height="64"/>
-                  <img src='./logos/express.png' width="64" height="64"/>
+                  <img src='/logos/spring.png' width="64" height="64"/>
+                  <img src='/logos/sailjs.png' width="64" height="64"/>
+                  <img src='/logos/express.png' width="64" height="64"/>
 
                 </Box> 
                 <Box  display="flex" justifyContent="space-evenly">
-                  <img src='./logos/mysql.png' width="100" height="64"/>
-                  <img src='./logos/postgresql.png' width="64" height="64"/>
-                  <img src='./logos/mongodb.png' width="64" height="64"/>
-                  <img src='./logos/redis.png' width="64" height="64"/>
-                  <img src='./logos/rabbitmq.png' width="64" height="64"/>
+                  <img src='/logos/mysql.png' width="100" height="64"/>
+                  <img src='/logos/postgresql.png' width="64" height="64"/>
+                  <img src='/logos/mongodb.png' width="64" height="64"/>
+                  <img src='/logos/redis.png' width="64" height="64"/>
+                  <img src='/logos/rabbitmq.png' width="64" height="64"/>
 
               </Box>     
           </React.Fragment> 
@@ -193,10 +193,10 @@ const About = ({summary}) => {
         visualBox ={
           <React.Fragment>
             <Box  display="flex" justifyContent="space-evenly">
-                  <img src='./logos/mocha.png' width="64" height="64"/>
-                  <img src='./logos/chai.png' width="64" height="64"/>
-                  <img src='./logos/sinon.png' width="64" height="64"/>
-                  <img src='./logos/jest.png' width="64" height="64"/>
+                  <img src='/logos/mocha.png' width="64" height="64"/>
+                  <img src='/logos/chai.png' width="64" height="64"/>
+                  <img src='/logos/sinon.png' width="64" height="64"/>
+                  <img src='/logos/jest.png' width="64" height="64"/>
             </Box>      
           </React.Fragment> 
         }
@@ -218,9 +218,9 @@ const About = ({summary}) => {
         visualBox ={
           <React.Fragment>
             <Box  display="flex" justifyContent="space-evenly">
-                  <img src='./logos/android.png' width="64" height="64"/>
-                  <img src='./logos/firebase.png' width="64" height="64"/>
-                  <img src='./logos/java.png' width="64" height="64"/>
+                  <img src='/logos/android.png' width="64" height="64"/>
+                  <img src='/logos/firebase.png' width="64" height="64"/>
+                  <img src='/logos/java.png' width="64" height="64"/>
             </Box>      
           </React.Fragment> 
         }
