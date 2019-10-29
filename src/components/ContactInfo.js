@@ -1,10 +1,9 @@
 import React from "react";
-import { Box , Button, Fab } from '@material-ui/core';
+import { Box, Fab } from '@material-ui/core';
 import ContactSVG from '../assets/contact.svg';
 import EmailRounded from '@material-ui/icons/EmailRounded';
 import { useStaticQuery, graphql } from "gatsby";
 import { makeStyles } from '@material-ui/core/styles';
-import Github from '../assets/github.svg';
 import LinkedIn from '../assets/linkedin.svg';
 import Twitter from '../assets/twitter.svg';
 
@@ -44,7 +43,7 @@ const ContactInfo = () => {
          }
         }`);
 
- const { socialLinks: { github,linkedin, twitter } } = data.allSeoJson.edges[0].node;      
+ const { socialLinks: {linkedin, twitter } } = data.allSeoJson.edges[0].node;      
  const email = data.site.siteMetadata.contactEmail;
  const subject = data.site.siteMetadata.contactEmailSubject;       
  return (
@@ -61,20 +60,7 @@ const ContactInfo = () => {
      <Box style={{opacity:0.2 , width:'100%'}} position="absolute">
         <ContactSVG/>
      </Box>
-     {/* <Box>
-     <Button 
-         variant="contained" 
-         color="primary" 
-         target="_top" 
-         href={`mailto:${email}?Subject=${subject}`}>
-         Say Hello!
-         <Box ml={1} mt={0.5}> <EmailRounded/> </Box>
-     </Button>
-    </Box> */}
     <Box mt={4}>
-    {/* <Fab color="secondary" aria-label="github" className={classes.fab}>
-        <Github />
-    </Fab> */}
       <Fab aria-label="linkedIn" className={classes.fab} href={linkedin} target="_blank" >
          <LinkedIn />
       </Fab>
@@ -85,6 +71,10 @@ const ContactInfo = () => {
          <EmailRounded />
       </Fab>
     </Box>
+    {/* <a href="https://icons8.com/icon/108784/javascript">JavaScript icon by Icons8</a> */}
+    {/* <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 
+               title="Flaticon">www.flaticon.com</a></div> */}
+               {/* <a href="https://iconscout.com/icon/postgresql-11" target="_blank">Postgresql Icon</a> by <a href="https://iconscout.com/contributors/icon-mafia">Icon Mafia</a> on <a href="https://iconscout.com">Iconscout</a> */}
  </Box>
  )
 };
