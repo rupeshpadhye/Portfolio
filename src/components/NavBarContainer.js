@@ -71,7 +71,7 @@ const onTabChange = (e , tab) => {
 const ResumeDownloadButton = ({resumeUrl,color='primary',...other}) => {
   return (
 <Box display='flex' alignItems='center' position="absolute" {...other}>
-  <Button color={color} target="_blank" href={resumeUrl}>Download Resume</Button>
+  <Button color={color} target="_blank" rel="noopener" href={resumeUrl}>Download Resume</Button>
 </Box>)};
 
 const NavBar = (props) => {

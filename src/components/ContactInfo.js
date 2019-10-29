@@ -61,13 +61,13 @@ const ContactInfo = () => {
         <ContactSVG/>
      </Box>
     <Box mt={4}>
-      <Fab aria-label="linkedIn" className={classes.fab} href={linkedin} target="_blank" >
+      <Fab aria-label="linkedIn" rel="noopener" className={classes.fab} href={linkedin} target="_blank" >
          <LinkedIn />
       </Fab>
-      <Fab  aria-label="twitter" className={classes.fab} href={twitter}  target="_blank" >
+      <Fab  aria-label="twitter" rel="noopener" className={classes.fab} href={twitter}  target="_blank" >
          <Twitter />
       </Fab>
-      <Fab aria-label="email" className={classes.fab}  href={`mailto:${email}?Subject=${subject}`}>
+      <Fab aria-label="email" rel="noopener" className={classes.fab}  href={`mailto:${email}?Subject=${subject}`}>
          <EmailRounded />
       </Fab>
     </Box>
