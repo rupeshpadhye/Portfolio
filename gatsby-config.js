@@ -9,7 +9,7 @@ module.exports = {
     siteMetadata: {
       title: 'Portfolio site',
       landingPageTitle: "Hi there!",
-      landingPageSubTitle: "I'm Rupesh and I'm a Software developer!",
+      landingPageSubTitle: "I'm Rupesh and I'm a Software Craftsman!",
       contactEmail: "rupeshpadhye@gmai.com",
       contactEmailSubject: "Hello%20Rupesh",
       siteUrl: 'https://rupeshpadhye.netlify.com'
